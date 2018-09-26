@@ -1,0 +1,17 @@
+.App {
+  box-sizing: border-box;
+  padding: 20px 5px 0 5px;
+}
+.top{
+  font-size: 18px;
+  font-weight:bold;
+}
+#box{
+  background:blue;
+  color: #ffffff;
+}
+#add{
+  background: green;
+  color: #ffffff;
+}
+
