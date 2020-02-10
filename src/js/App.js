@@ -68,7 +68,7 @@ class App extends Component {
 
   //删除
   delete=()=>{
-
+let some=123;
     this.search();//调用查询方法
   }
 
