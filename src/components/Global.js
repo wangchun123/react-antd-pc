@@ -6,6 +6,8 @@ import "../css/global.scss";
 
 import App from "../js/App";
 import Wq from "../js/wq";
+import EditTable from '../js/editTable';
+
 import { user, team } from "../util/menus";
 
 import { HashRouter, Route, Switch } from "react-router-dom";
@@ -19,12 +21,11 @@ class SiderDemo extends React.Component {
     this.state = {
       collapsed: false
     };
-    console.log("user", user);
-    console.log("team", team);
+    
   }
 
   onCollapse = collapsed => {
-    console.log(collapsed);
+    
     this.setState({ collapsed });
   };
 
@@ -41,7 +42,7 @@ class SiderDemo extends React.Component {
   }
 
   render() {
-    console.log(this.props.Element);
+    
     return (
       <Layout style={{ minHeight: "100vh" }}>
         <Sider
@@ -102,6 +103,7 @@ class SiderDemo extends React.Component {
                 <div>
                   <Route path="/index/tom" component={Wq} />
                   <Route path="/index/bill" component={App} />
+                  <Route path="/index/EditTable" component={EditTable} />
                 </div>
               </HashRouter>
             </div>

@@ -9,7 +9,7 @@
    },
    {
        name:'alex',
-       url:'/index/tom'
+       url:'/index/EditTable'
    }
  ]
 

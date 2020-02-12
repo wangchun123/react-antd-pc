@@ -37,19 +37,19 @@ class App extends Component {
   }
 
    onShowSizeChange(current, pageSize) {
-    console.log(current, pageSize);
+    
   }
 
 //输入框查询
   search(e){
     //在这里发请求
 
-    console.log('123',e);
+    
   }
 
 //编辑
   edit=(e)=>{
-    console.log('e',e);
+    
     this.setState({
       editMessage:e
     })
@@ -115,7 +115,7 @@ let some=123;
         )
       },
     }];
-    console.log('editmessage',this.state.editMessage)
+    
     return (
       <div className="App">
         <div className="top">普通人员列表</div>
