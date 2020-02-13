@@ -3,11 +3,11 @@ import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import { Link } from "react-router-dom";
 import "../css/global.scss";
 
-import App from "../js/App";
-import Wq from "../js/wq";
-import EditTable from "../js/editTable";
-import HoverEditList from "../js/hoverEditList";
-import Trees from '../js/tree';
+import App from "../js/personnelList/index";
+import Wq from "../js/CheckboxGroups/index";
+import EditTable from "../js/editTable/index";
+import HoverEditList from "../js/hoverEditList/index";
+import Trees from '../js/tree/index';
 
 import { user, team } from "../util/menus";
 

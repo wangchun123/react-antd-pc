@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/antd-min.css';
 import '@alifd/next/dist/next.css';
-import App from './js/App';
 import Index from './components/Global';
-import Wq from './js/wq';
 import registerServiceWorker from './registerServiceWorker';
 import {
     HashRouter,

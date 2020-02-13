@@ -8,9 +8,9 @@ import {
   Notification
 } from "@alifd/next";
 import { cloneDeep } from "lodash";
-import HoverItem from "../components/hoverItem";
-import "../css/hoverEditLits.scss";
-import { hoverEditListData } from "../util/const";
+import HoverItem from "./components/hoverItem";
+import "../../css/hoverEditLits.scss";
+import { hoverEditListData } from "../../util/const";
 
 const HoverEditList = () => {
   const [hoverData, setHoverData] = useState([]);
