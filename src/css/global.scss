@@ -1,7 +1,13 @@
 .logo {
-        
-        height: 80px;
+  height: 64px;
+  background: url(../image/top.jpg) no-repeat;
+  background-size: cover;
 }
-.check:hove{
-    background: red;    
+.check:hove {
+  background: red;
+}
+
+.header {
+  background: url(../image/head.jpg) no-repeat;
+  background-size: cover;
 }
