@@ -5,7 +5,7 @@ import {
   Dropdown,
   Icon,
   Balloon,
-  Menu,
+  Notification,
   Input
 } from "@alifd/next";
 
@@ -15,11 +15,11 @@ const HoverItem = ({ item, index, saveSonEditValue }) => {
   const [value, setValue] = useState();
 
   const confirm = () => {
-
-    if (!value) return;
+    if (!value) return Notification.warning({title:'不能添加为空'});
     saveSonEditValue &&
       saveSonEditValue(index, { title: value, className: "addItem" });
     setShowAction(false);
+    setValue('')//数据控制为空
   };
 
   const dealDelete = () => {
