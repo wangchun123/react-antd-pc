@@ -1,0 +1,58 @@
+.content {
+  border: 0.5px solid #3333;
+  padding: 10px 0px;
+  .box {
+    box-sizing: border-box;
+    background: #ccc;
+    min-height: 100px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    // flex: 1;
+    .icon {
+      // width: 30px;
+    }
+    .left {
+      width: 100px;
+      //   flex-wrap:nowrap;
+    }
+    .right {
+      margin-left: 20px;
+    }
+    .dealIcon {
+      border: 1px solid #3333;
+    }
+    .next-icon.next-medium:before {
+      font-size: 1px;
+    }
+  }
+  .addItem{
+    box-sizing: border-box;
+    background: #ccc;
+    min-height: 100px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    // flex: 1;
+    .icon {
+      // width: 30px;
+    }
+    .left {
+      width: 100px;
+      //   flex-wrap:nowrap;
+    }
+    .right {
+      margin-left: 20px;
+    }
+    .dealIcon {
+      border: 1px solid #3333;
+    }
+    .next-icon.next-medium:before {
+      font-size: 1px;
+    }
+  }
+  .showAction {
+    background: #ccc;
+padding: 10px 10px;
+  }
+}

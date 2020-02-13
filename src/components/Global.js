@@ -1,11 +1,14 @@
 import React from "react";
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import { Link } from "react-router-dom";
-// import dog from '../image/1.jpg';
 import "../css/global.scss";
 
-import App from "../js/App";
-import Wq from "../js/wq";
+import App from "../js/personnelList/index";
+import Wq from "../js/CheckboxGroups/index";
+import EditTable from "../js/editTable/index";
+import HoverEditList from "../js/hoverEditList/index";
+import Trees from '../js/tree/index';
+
 import { user, team } from "../util/menus";
 
 import { HashRouter, Route, Switch } from "react-router-dom";
@@ -19,12 +22,9 @@ class SiderDemo extends React.Component {
     this.state = {
       collapsed: false
     };
-    console.log("user", user);
-    console.log("team", team);
   }
 
   onCollapse = collapsed => {
-    console.log(collapsed);
     this.setState({ collapsed });
   };
 
@@ -41,17 +41,16 @@ class SiderDemo extends React.Component {
   }
 
   render() {
-    console.log(this.props.Element);
     return (
       <Layout style={{ minHeight: "100vh" }}>
         <Sider
           collapsible
           collapsed={this.state.collapsed}
           onCollapse={this.onCollapse}
-          theme="light"
+          theme="dark"
         >
           <div className="logo" />
-          <Menu theme="light" defaultSelectedKeys={["1"]} mode="inline">
+          <Menu theme="dark" defaultOpenKeys={["sub1"]} mode="inline">
             <SubMenu
               key="sub1"
               title={
@@ -91,7 +90,7 @@ class SiderDemo extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: "#fff", padding: 0 }} />
+          <Header className='header' />
           <Content style={{ margin: "0 16px" }}>
             <Breadcrumb style={{ margin: "16px 0" }}>
               {/* <Breadcrumb.Item>User</Breadcrumb.Item>
@@ -102,12 +101,15 @@ class SiderDemo extends React.Component {
                 <div>
                   <Route path="/index/tom" component={Wq} />
                   <Route path="/index/bill" component={App} />
+                  <Route path="/index/editTable" component={EditTable} />
+                  <Route path="/index/hoverEditList" component={HoverEditList} />
+                  <Route path="/index/tree" component={Trees} />
                 </div>
               </HashRouter>
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
+            Ant Design/Fusion Design ©2018 Created by Ant UED
           </Footer>
         </Layout>
       </Layout>

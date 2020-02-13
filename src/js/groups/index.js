@@ -1,18 +1,18 @@
-import React from 'react';
-import { Checkbox,Form,Button} from 'antd';
+import React from './node_modules/react';
+import { Checkbox,Form,Button} from './node_modules/antd';
 const CheckboxGroup = Checkbox.Group;
 const FormItem = Form.Item;
 
  class some extends React.Component{
     onChange(checkedValues) {
-        console.log('checked = ', checkedValues);
+        
       }
 
       handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            
           }
         });
       }

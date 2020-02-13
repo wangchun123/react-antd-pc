@@ -16,7 +16,7 @@ class modal extends React.Component{
 
     }
     onChange = (e) =>{
-        console.log(e.target.checked)
+        
     }
     showModal= () => {
         this.setState({
@@ -29,18 +29,18 @@ class modal extends React.Component{
         })
          //拿到所有id
             var ye=document.getElementsByTagName("input");
-            console.log(ye);
+            
       }
 
     handleOk = (e) => {
-        console.log(e);
+        
         this.setState({
           visible: false,
         });
       }
     
       handleCancel = (e) => {
-        console.log(e);
+       
         this.setState({
           visible: false,
         });
@@ -50,7 +50,7 @@ class modal extends React.Component{
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+       
         message.success('设置成功');
 
         this.props.Parent.search();//调用查询接口
@@ -74,7 +74,7 @@ class modal extends React.Component{
             wrapperCol: { span: 8 },
           };
 
-          console.log('modal-messsage',this.props.editMessage);
+          
     return(
         <div>
             <Modal
