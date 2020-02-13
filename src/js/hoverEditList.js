@@ -1,5 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Card, Button, Dropdown, Icon, Balloon } from "@alifd/next";
+import {
+  Card,
+  Button,
+  Dropdown,
+  Icon,
+  Balloon,
+  Notification
+} from "@alifd/next";
 import { cloneDeep } from "lodash";
 import HoverItem from "../components/hoverItem";
 import "../css/hoverEditLits.scss";
@@ -26,6 +33,7 @@ const HoverEditList = () => {
       newHoverData.splice(index + 1, 0, val);
     } else {
       newHoverData.splice(index, 1);
+      Notification.success({ title: "删除成功" });
     }
     setHoverData(newHoverData);
   };
