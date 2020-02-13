@@ -7,6 +7,7 @@ import App from "../js/App";
 import Wq from "../js/wq";
 import EditTable from "../js/editTable";
 import HoverEditList from "../js/hoverEditList";
+import Trees from '../js/tree';
 
 import { user, team } from "../util/menus";
 
@@ -102,6 +103,7 @@ class SiderDemo extends React.Component {
                   <Route path="/index/bill" component={App} />
                   <Route path="/index/editTable" component={EditTable} />
                   <Route path="/index/hoverEditList" component={HoverEditList} />
+                  <Route path="/index/tree" component={Trees} />
                 </div>
               </HashRouter>
             </div>

@@ -14,6 +14,10 @@ export const user = [
   {
     name: "滑动提示信息",
     url: "/index/hoverEditList"
+  },
+  {
+    name: "tree",
+    url: "/index/tree"
   }
 ];
 
