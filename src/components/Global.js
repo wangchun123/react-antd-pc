@@ -8,6 +8,7 @@ import Wq from "../js/groups/index";
 import EditTable from "../js/editTable/index";
 import HoverEditList from "../js/hoverEditList/index";
 import Trees from "../js/tree/index";
+import RichSearch from "../js/richSearch/index";
 
 import { user, team } from "../util/menus";
 
@@ -107,6 +108,7 @@ class SiderDemo extends React.Component {
                     component={HoverEditList}
                   />
                   <Route path="/index/tree" component={Trees} />
+                  <Route path="/index/richSearch" component={RichSearch} />
                 </div>
               </HashRouter>
             </div>

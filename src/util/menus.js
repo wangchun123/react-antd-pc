@@ -18,6 +18,10 @@ export const user = [
   {
     name: "tree",
     url: "/index/tree"
+  },
+  {
+    name: "丰富搜索框",
+    url: "/index/richSearch"
   }
 ];
 
