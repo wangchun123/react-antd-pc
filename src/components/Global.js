@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../css/global.scss";
 
 import App from "../js/personnelList/index";
-import Wq from "../js/CheckboxGroups/index";
+import Wq from "../js/groups/index";
 import EditTable from "../js/editTable/index";
 import HoverEditList from "../js/hoverEditList/index";
 import Trees from "../js/tree/index";

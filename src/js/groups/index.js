@@ -1,5 +1,5 @@
-import React from './node_modules/react';
-import { Checkbox,Form,Button} from './node_modules/antd';
+import React from 'react';
+import { Checkbox,Form,Button} from 'antd';
 const CheckboxGroup = Checkbox.Group;
 const FormItem = Form.Item;
 
