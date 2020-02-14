@@ -2,16 +2,15 @@
   box-sizing: border-box;
   padding: 20px 5px 0 5px;
 }
-.top{
+.top {
   font-size: 18px;
-  font-weight:bold;
+  font-weight: bold;
 }
-#box{
-  background:blue;
+#box {
+  background: blue;
   color: #ffffff;
 }
-#add{
+#add {
   background: green;
   color: #ffffff;
 }
-

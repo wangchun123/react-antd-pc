@@ -7,7 +7,7 @@ import App from "../js/personnelList/index";
 import Wq from "../js/CheckboxGroups/index";
 import EditTable from "../js/editTable/index";
 import HoverEditList from "../js/hoverEditList/index";
-import Trees from '../js/tree/index';
+import Trees from "../js/tree/index";
 
 import { user, team } from "../util/menus";
 
@@ -90,7 +90,7 @@ class SiderDemo extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header className='header' />
+          <Header className="header" />
           <Content style={{ margin: "0 16px" }}>
             <Breadcrumb style={{ margin: "16px 0" }}>
               {/* <Breadcrumb.Item>User</Breadcrumb.Item>
@@ -102,7 +102,10 @@ class SiderDemo extends React.Component {
                   <Route path="/index/tom" component={Wq} />
                   <Route path="/index/bill" component={App} />
                   <Route path="/index/editTable" component={EditTable} />
-                  <Route path="/index/hoverEditList" component={HoverEditList} />
+                  <Route
+                    path="/index/hoverEditList"
+                    component={HoverEditList}
+                  />
                   <Route path="/index/tree" component={Trees} />
                 </div>
               </HashRouter>
