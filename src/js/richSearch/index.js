@@ -7,7 +7,7 @@ import { menuDatas } from "../../util/const";
 export default () => {
   const [visible, setVisible] = useState(false);
   const [value, setValue] = useState();
-  const [menuData, setMenuData] = useState(menuDatas);
+  const [menuData, setMenuData] = useState([]);
 
   const onSearch = val => {
     console.log("val", val);
@@ -15,10 +15,6 @@ export default () => {
 
   const onVisibleChange = () => {
     setVisible(false);
-  };
-
-  const onChange = val => {
-    setValue(val);
   };
 
   const onFocus = () => {
@@ -30,6 +26,20 @@ export default () => {
     setVisible(false);
     setValue(val);
   };
+
+  const fetchOptionItem = val => {
+    console.log("请求数据", val);
+    setTimeout(() => {
+      setMenuData(menuDatas);
+    }, 200);
+  };
+
+  const onChange = val => {
+    setValue(val);
+    debounced(val);
+  };
+
+  const debounced = debounce(fetchOptionItem, 3000);
 
   const renderMenu = () => {
     return (
@@ -69,6 +79,10 @@ export default () => {
     );
   };
 
+  useEffect(() => {
+    fetchOptionItem();
+  }, []);
+
   return (
     <Search
       onVisibleChange={onVisibleChange}
@@ -78,7 +92,7 @@ export default () => {
       onSearch={onSearch}
       onChange={onChange}
       onFocus={onFocus}
-      placeholder='请输入...'
+      placeholder="请输入..."
     />
   );
 };
