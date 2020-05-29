@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../css/global.scss";
 
 import App from "../js/personnelList/index";
-import Wq from "../js/CheckboxGroups/index";
 import EditTable from "../js/editTable/index";
 import HoverEditList from "../js/hoverEditList/index";
 import Trees from '../js/tree/index';
@@ -99,7 +98,6 @@ class SiderDemo extends React.Component {
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
               <HashRouter>
                 <div>
-                  <Route path="/index/tom" component={Wq} />
                   <Route path="/index/bill" component={App} />
                   <Route path="/index/editTable" component={EditTable} />
                   <Route path="/index/hoverEditList" component={HoverEditList} />
