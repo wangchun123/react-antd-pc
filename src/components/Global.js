@@ -3,7 +3,8 @@ import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import { Link } from "react-router-dom";
 import "../css/global.scss";
 
-import App from "../js/personnelList/index";
+// import App from "../js/personnelList/index";
+import App from '@/js/personnelList/index';
 import EditTable from "../js/editTable/index";
 import HoverEditList from "../js/hoverEditList/index";
 import Trees from '../js/tree/index';
