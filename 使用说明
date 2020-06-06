@@ -1,2 +1,9 @@
-qweqweqweqwewqewqasdasd
-asdasd
+-启动项目操作前，确保安装node.
+1.npm install 
+2.npm start
+3.在访问浏览器看到项目 http://localhost:3000/#/ 
+
+-编写项目的时候。
+1.使用@可以简化路径指向src/
+2.可以使用scss文件
+
