@@ -8,6 +8,7 @@ import EditTable from "../js/editTable/index";
 import HoverEditList from "../js/hoverEditList/index";
 import Trees from "../js/tree/index";
 import TestPage from "@/js/test-page";
+import Home from "@/js/home";
 
 import { user, team } from "../util/menus";
 
@@ -99,6 +100,7 @@ class SiderDemo extends React.Component {
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
               <HashRouter>
                 <div>
+                  <Route path="/index" exact component={Home} />
                   <Route path="/index/bill" component={App} />
                   <Route path="/index/editTable" component={EditTable} />
                   <Route
