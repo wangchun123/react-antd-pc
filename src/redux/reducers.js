@@ -1,16 +1,14 @@
 import action from './actions';
 
 const initialState = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL,
+  visibilityFilter: 1123123123213,
   todos: [],
 };
 
 function todoApp(state = initialState, action) {
   switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return Object.assign({}, state, {
-        visibilityFilter: action.filter,
-      });
+    case 'SET_VISIBILITY_FILTER':
+      return { ...state, ...action.payload };
     default:
       return state;
   }
