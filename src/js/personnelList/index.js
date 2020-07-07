@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Button,
   Divider,
@@ -7,68 +7,77 @@ import {
   Table,
   Pagination,
   Icon,
-  LocaleProvider
-} from "antd";
-import "../../css/App.css";
-import zhCN from "antd/lib/locale-provider/zh_CN";
-import Global from "../../components/Global";
+  LocaleProvider,
+} from 'antd';
+import '../../css/App.css';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+import Global from '../../components/Global';
 
-import Search from "./components/search";
-import AddModal from "./components/addmodal";
+import Search from './components/search';
+import AddModal from './components/addmodal';
+import { connect } from 'react-redux';
+import actions from '@/redux/actions';
 
 const data = [
   {
-    key: "1",
-    name: "John Brown",
+    key: '1',
+    name: 'John Brown',
     age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"]
+    address: 'New York No. 1 Lake Park',
+    tags: ['nice', 'developer'],
   },
   {
-    key: "2",
-    name: "Jim Green",
+    key: '2',
+    name: 'Jim Green',
     age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"]
+    address: 'London No. 1 Lake Park',
+    tags: ['loser'],
   },
   {
-    key: "3",
-    name: "Joe Black",
+    key: '3',
+    name: 'Joe Black',
     age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"]
-  }
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
 ];
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       visible: false,
-      editMessage: {}
+      editMessage: {},
     };
+    console.log(this.props);
   }
 
   onShowSizeChange(current, pageSize) {}
 
   //输入框查询
-  search(e) {
+  search = (e) => {
     //在这里发请求
-  }
+    const { dataList, dispatch } = this.props;
+    dispatch({
+      type: actions.GET_VISIBILITY_FILTER,
+      payload: { visibilityFilter: 'qweqwe' },
+    });
+    console.log('dataList', dataList);
+  };
 
   //编辑
-  edit = e => {
+  edit = (e) => {
     this.setState({
-      editMessage: e
+      editMessage: e,
     });
     this.modal.showModal();
   };
 
-  onRef = e => {
+  onRef = (e) => {
     this.modal = e;
   };
   //添加
-  add = e => {
+  add = (e) => {
     this.modal.showModal();
   };
 
@@ -81,49 +90,49 @@ class App extends Component {
   render() {
     const columns = [
       {
-        title: "序号",
-        dataIndex: "name",
-        key: "name"
+        title: '序号',
+        dataIndex: 'name',
+        key: 'name',
       },
       {
-        title: "普通用户名称",
-        dataIndex: "age",
-        key: "age"
+        title: '普通用户名称',
+        dataIndex: 'age',
+        key: 'age',
       },
       {
-        title: "手机号",
-        dataIndex: "address",
-        key: "address"
+        title: '手机号',
+        dataIndex: 'address',
+        key: 'address',
       },
       {
-        title: "权限",
-        key: "tags",
-        dataIndex: "tags"
+        title: '权限',
+        key: 'tags',
+        dataIndex: 'tags',
       },
       {
-        title: "单位名称",
-        key: "action",
-        render: (text, record) => <span></span>
+        title: '单位名称',
+        key: 'action',
+        render: (text, record) => <span></span>,
       },
       {
-        title: "可查询合作项目",
-        key: "action1",
-        render: (text, record) => <span></span>
+        title: '可查询合作项目',
+        key: 'action1',
+        render: (text, record) => <span></span>,
       },
       {
-        title: "操作",
-        key: "action2",
+        title: '操作',
+        key: 'action2',
         render: (text, record) => {
           return (
             <div>
               <a onClick={this.edit.bind(this, text)}>编辑</a>
-              <a style={{ marginLeft: "20px" }} onClick={this.delete}>
+              <a style={{ marginLeft: '20px' }} onClick={this.delete}>
                 删除
               </a>
             </div>
           );
-        }
-      }
+        },
+      },
     ];
 
     return (
@@ -141,7 +150,7 @@ class App extends Component {
               <Search search={this.search}></Search>
             </Col>
           </Row>
-          <div style={{ height: "30px" }}></div>
+          <div style={{ height: '30px' }}></div>
           <Table
             columns={columns}
             dataSource={data}
@@ -151,12 +160,12 @@ class App extends Component {
           <Row type="flex" justify="space-bewteen">
             <Col span={12}>
               每页显示
-              <span style={{ color: "blue" }}>
+              <span style={{ color: 'blue' }}>
                 10条
                 <Icon type="caret-down" theme="outlined" />
               </span>
             </Col>
-            <Col span={12} style={{ textAlign: "right" }}>
+            <Col span={12} style={{ textAlign: 'right' }}>
               <LocaleProvider locale={zhCN}>
                 <Pagination
                   total={50}
@@ -177,4 +186,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect((state) => {
+  console.log('state', state);
+  return { dataList: state.visibilityFilter };
+})(App);
