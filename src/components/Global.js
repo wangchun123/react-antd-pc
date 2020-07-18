@@ -10,6 +10,7 @@ import Trees from '../js/tree/index';
 import TestPage from '@/js/test-page';
 import Home from '@/js/home';
 import TestRedux from '@/js/testRedux';
+import WrittenExamination from '@/js/written-examination';
 
 import { user, team } from '../util/menus';
 
@@ -111,6 +112,7 @@ class SiderDemo extends React.Component {
                   <Route path="/index/tree" component={Trees} />
                   <Route path="/index/tom" component={TestPage} />
                   <Route path="/index/testRedux" component={TestRedux} />
+                  <Route path="/index/writtenExamination" component={WrittenExamination} />
                 </div>
               </HashRouter>
             </div>

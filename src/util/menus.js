@@ -23,6 +23,10 @@ export const user = [
     name: 'testRedux',
     url: '/index/testRedux',
   },
+  {
+    name: 'writtenExamination',
+    url: '/index/writtenExamination',
+  },
 ];
 
 export const team = [
