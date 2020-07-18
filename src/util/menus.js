@@ -25,7 +25,7 @@ export const user = [
   },
   {
     name: 'writtenExamination',
-    url: '/index/writtenExamination',
+    url: '/index/writtenExamination?name=123&age=12',
   },
 ];
 

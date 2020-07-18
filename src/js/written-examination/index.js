@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Input } from '@alifd/next';
 import './index.scss';
 
@@ -59,6 +59,33 @@ export default () => {
 
   const debouceFn = throttle(fn, 1000, true);
 
+  const forbidScroll = () => {
+    document.body.style.overflow = 'visible';
+  };
+
+  const getQueryParam = () => {
+    const query = window.location.hash;
+    const obj = {};
+    if (query.indexOf('?') != -1) {
+      const arr = query.split('?')[1];
+      if (arr.indexOf('&') != -1) {
+        const newArray = arr.split('&');
+        newArray.forEach((item) => {
+          obj[item.split('=')[0]] = item.split('=')[1];
+        });
+      } else {
+        const newArray = arr.split('=');
+        obj[newArray[0]] = newArray[1];
+      }
+    }
+    return obj;
+  };
+
+  useEffect(() => {
+    forbidScroll();
+    console.log('结果:', getQueryParam());
+  }, []);
+
   return (
     <div>
       <div className="one">
@@ -72,6 +99,8 @@ export default () => {
       <div className="two">
         <Input onChange={(val) => debouceFn(val)}></Input>
       </div>
+
+      <div className="three"></div>
     </div>
   );
 };
