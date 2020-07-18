@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { Input } from '@alifd/next';
+import { Input, Button } from '@alifd/next';
+import Toast from './components/toast';
+
 import './index.scss';
 
 export default () => {
@@ -84,6 +86,10 @@ export default () => {
   useEffect(() => {
     forbidScroll();
     console.log('结果:', getQueryParam());
+
+    // Toast.success("发送成功")
+
+    // Toast.loading("加载中", true)
   }, []);
 
   return (
@@ -100,7 +106,9 @@ export default () => {
         <Input onChange={(val) => debouceFn(val)}></Input>
       </div>
 
-      <div className="three"></div>
+      <div className="three">
+        <Button onClick={() => Toast.show('请求失败',2000)}>toast</Button>
+      </div>
     </div>
   );
 };
