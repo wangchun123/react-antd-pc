@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import ReactDom from 'react-dom';
 import './index.scss';
 
 let timer = null;
@@ -8,13 +7,12 @@ export default class Toast extends React.Component {
   static show(masg, timeout = 1000) {
     this.init();
     this.setTimeout(timeout);
-    ReactDom.render(
-      <Fragment>{masg}</Fragment>,
-      document.getElementById('box'),
-    );
+    const el = document.getElementById('box');
+    el.innerText = masg;
   }
 
   static init() {
+    clearTimeout(timer);
     const el = document.getElementById('box');
     if (el) {
       el.style.display = 'block';
@@ -26,8 +24,7 @@ export default class Toast extends React.Component {
   }
 
   static setTimeout = (timeout) => {
-    clearTimeout(timer);
-    setTimeout(() => {
+    timer = setTimeout(() => {
       const el = document.getElementById('box');
       el.style.display = 'none';
     }, timeout);
