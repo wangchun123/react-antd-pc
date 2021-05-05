@@ -27,6 +27,10 @@ export const user = [
     name: 'writtenExamination',
     url: '/index/writtenExamination?name=123&age=12',
   },
+  {
+    name: 'reactContext',
+    url: '/index/reactContext',
+  },
 ];
 
 export const team = [

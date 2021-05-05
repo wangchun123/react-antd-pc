@@ -1,20 +1,23 @@
-import React from 'react';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import { Link } from 'react-router-dom';
-import '../css/global.scss';
+import React from "react";
+import { Layout, Menu, Breadcrumb, Icon } from "antd";
+import { Link } from "react-router-dom";
+import "../css/global.scss";
 
-import App from '@/js/personnelList/index';
-import EditTable from '../js/editTable/index';
-import HoverEditList from '../js/hoverEditList/index';
-import Trees from '../js/tree/index';
-import TestPage from '@/js/test-page';
-import Home from '@/js/home';
-import TestRedux from '@/js/testRedux';
-import WrittenExamination from '@/js/written-examination';
+import App from "@/js/personnelList/index";
+import EditTable from "../js/editTable/index";
+import HoverEditList from "../js/hoverEditList/index";
+import Trees from "../js/tree/index";
+import TestPage from "@/js/test-page";
+import Home from "@/js/home";
+import TestRedux from "@/js/testRedux";
+import WrittenExamination from "@/js/written-examination";
+import ReactContext from "@/js/reactContext";
 
-import { user, team } from '../util/menus';
+import { user, team } from "../util/menus";
 
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from "react-router-dom";
+
+import styles from "./index.scss";
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -45,7 +48,7 @@ class SiderDemo extends React.Component {
 
   render() {
     return (
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout style={{ minHeight: "100vh" }}>
         <Sider
           collapsible
           collapsed={this.state.collapsed}
@@ -53,7 +56,7 @@ class SiderDemo extends React.Component {
           theme="dark"
         >
           <div className="logo" />
-          <Menu theme="dark" defaultOpenKeys={['sub1']} mode="inline">
+          <Menu theme="dark" defaultOpenKeys={["sub1"]} mode="inline">
             <SubMenu
               key="sub1"
               title={
@@ -94,12 +97,18 @@ class SiderDemo extends React.Component {
         </Sider>
         <Layout>
           <Header className="header" />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
+          <Content style={{ margin: "0 16px" }}>
+            <Breadcrumb style={{ margin: "16px 0" }}>
               {/* <Breadcrumb.Item>User</Breadcrumb.Item>
               <Breadcrumb.Item>Bill</Breadcrumb.Item> */}
             </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+            <div
+              className={styles.box}
+              style={{
+                padding: 24,
+                background: "#fff",
+              }}
+            >
               <HashRouter>
                 <div>
                   <Route path="/index" exact component={Home} />
@@ -112,12 +121,16 @@ class SiderDemo extends React.Component {
                   <Route path="/index/tree" component={Trees} />
                   <Route path="/index/tom" component={TestPage} />
                   <Route path="/index/testRedux" component={TestRedux} />
-                  <Route path="/index/writtenExamination" component={WrittenExamination} />
+                  <Route
+                    path="/index/writtenExamination"
+                    component={WrittenExamination}
+                  />
+                  <Route path="/index/reactContext" component={ReactContext} />
                 </div>
               </HashRouter>
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
+          <Footer style={{ textAlign: "center" }}>
             Ant Design/Fusion Design ©2018 Created by Ant UED
           </Footer>
         </Layout>
